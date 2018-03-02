@@ -4,8 +4,9 @@
     <h1>{{ msg }}</h1>
    
    <div v-for="bouton in boutons">
-    <h2>{{bouton.nom}}
+    <h2 :class='{red:bouton.status}' >{{bouton.nom}}
      <toggle-button v-model="bouton.status"
+                @click="prout = !status"
                :value="false" 
                color="FireBrick" 
                width="85" 
@@ -68,5 +69,9 @@ li {
 
 a {
   color: #42b983;
+}
+
+.red {
+  color: #00E030;
 }
 </style>
