@@ -6,7 +6,6 @@
    <div v-for="bouton in boutons">
     <h2 :class='{red:bouton.status}' >{{bouton.nom}}
      <toggle-button v-model="bouton.status"
-                @click="prout = !status"
                :value="false" 
                color="FireBrick" 
                width="85" 
@@ -72,6 +71,6 @@ a {
 }
 
 .red {
-  color: #00E030;
+  color: #A00010;
 }
 </style>
