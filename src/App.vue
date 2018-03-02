@@ -3,6 +3,20 @@
     <img src="./assets/logo-coffee.jpg">
     <h1>{{ msg }}</h1>
    
+   <div v-for="bouton in boutons">
+    <h2>{{bouton.nom}}
+     <toggle-button v-model="bouton.status"
+               :value="false" 
+               color="FireBrick" 
+               width="85" 
+               height='35'
+               :sync="true" 
+               :labels="{checked: 'Active', unchecked: 'Inactive'}"/>
+    </h2>
+     
+   </div>
+  
+    
    
   </div>
 </template>
@@ -12,8 +26,18 @@ export default {
   name: 'app',
   data () {
     return {
-      msg: 'Bienvenue sur le nouveau projet !'
+      msg: 'Bienvenue sur le nouveau projet !',
+      boutons: [{
+        nom: "Machine 1",
+        status:true,
+
+    },
+    {
+      nom: "Machine 2",
+      status:false,
+    }]
     }
+    
   }
 }
 </script>
