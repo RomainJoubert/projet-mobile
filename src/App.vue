@@ -3,7 +3,7 @@
     <img src="./assets/logo-coffee.jpg">
     <h1>{{ msg }}</h1>
    
-   <div v-for="bouton in boutons">
+  <!--  <div v-for="bouton in boutons">
     <h2 :class='{red:bouton.status}' >{{bouton.nom}}
      <toggle-button v-model="bouton.status"
                :value="false" 
@@ -14,7 +14,13 @@
                :labels="{checked: 'Active', unchecked: 'Inactive'}"/>
     </h2>
      
-   </div>
+   </div> -->
+   
+    <ul>
+     <machine :rien="bouton" v-for="bouton in boutons" >     
+     </machine>
+    </ul>
+
   
     
    
@@ -62,8 +68,8 @@ ul {
 }
 
 li {
-  display: inline-block;
-  margin: 0 10px;
+  display: block;
+  margin:  10px;
 }
 
 a {
